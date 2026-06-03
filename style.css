@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.alert {
+    display: none;
+}
+
+.border {
+    width: 100px;
+    height: 100px;
+    background-color: salmon;
+    animation: animasikotak 4s linear infinite;
+    
+}
+
+@keyframes animasikotak {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(calc(100vw - 100px), 0) rotate(-270deg);
+    }
+    50% {
+        transform: translate(calc(100vw - 100px), calc(100vh - 100px)) rotate(-540deg);
+        background-color: royalblue;
+    }
+    75% {
+       transform: translate(0, calc(100vh - 100px)) rotate(-810deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg) rotate(-1080deg);
+    }
+}
+
+.container {
+    width: 910px;
+    border: 5px solid black;
+    margin: 10px auto;
+}
+
+.kotak {
+    width: 100px;
+    height: 100px;
+    background-color: salmon;
+    text-align: center;
+    line-height: 100px;
+}
+
+.kotak1 {
+    transition: 3s ease;
+}
+.kotak2 {
+    transition: 3s ease-in;
+}
+.kotak3 {
+    transition: 3s ease-out;
+}
+.kotak4 {
+    transition: 3s ease-in-out;
+}
+.kotak5 {
+    transition: 3s linear;
+}
+.kotak6 {
+    transition: 3s cubic-bezier(0.25,-0.4, 0.64, 1.64);
+}
+
+.container:hover .kotak {
+    transform: rotate(720deg);
+    margin-left: 800px;
+    background-color: royalblue;
+}
+
+/* MOBILE VIEW */
+
+@media (max-width: 768px) {
+    .container {
+        display: none;
+    }
+    .alert {
+        display: inline-block;
+        text-align: center;
+        margin: 400px auto;
+    }
+}
